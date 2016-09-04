@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+
+  "name": "Prohodienator",
+  "description": "This extension helps spend time to useful things",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "html/popup.html"
+  },
+  "permissions": [
+    "http://*/",
+    "https://*/",
+    "contextMenus",
+    "tabs",
+    "webNavigation",
+    "alarms"
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ]
+  }
+
+}
