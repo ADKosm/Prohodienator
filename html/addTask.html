@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new task</title>
+    <link href="../style/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/css/addTask.css" rel="stylesheet">
+    <!--<script src="../style/js/bootstrap.min.js"></script>-->
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/jquery.storageapi.min.js"></script>
+    <script src="../js/url-tld.min.js"></script>
+    <script src="../js/addTask.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="central-form col-md-6 col-md-offset-3">
+            <h1>Add new task:</h1>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="blockedSite">Site</label>
+                    <input type="text" class="form-control" id="blockedSite" name="blockedSite">
+                </div>
+                <div class="form-group">
+                    <label for="taskName">Name</label>
+                    <input type="text" class="form-control" id="taskName" placeholder="Reading the book" name="taskName">
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Description</label>
+                    <textarea class="form-control" id="taskDescription" rows="3" placeholder="To read a chapter in the book" name="taskDescription"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Day</label><br>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="dayMonday" name="dayMonday" checked> Monday
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="dayTuesday" name="dayTuesday" checked> Tuesday
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="dayWednesday" name="dayWednesday" checked> Wednesday
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="dayThursday" name="dayThursday" checked> Thursday
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="dayFriday" name="dayFriday" checked> Friday
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="daySaturday" name="daySaturday" checked>  Saturday
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" id="daySunday" name="daySunday" checked> Sunday
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="taskType" id="restOfDay" value="rest" checked>
+                            Site becomes available for the rest of the day.
+                        </label>
+                    </div>
+                    <div class="radio">
+                        <label>
+                            <input type="radio" name="taskType" id="certainTime" value="time">
+                            Site becomes available for the certain time :
+                        </label>
+                        <div class="input-group">
+                            <input class="form-control " type="number" id="taskTime" value="1" min="1" max="100" width="50px" name="taskTime">
+                            <span class="input-group-addon">hours</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" id="sub" class="btn btn-default">Add</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
