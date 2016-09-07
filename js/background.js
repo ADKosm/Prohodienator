@@ -113,22 +113,23 @@ function handleRequest(url) {
     }
 
     if(currentTask.currentState.blocked) {
+        alert("YP");
         updateDate(currentTask);
         return true;
     } else {
         if(currentTask.taskType === "rest") {
             if(isThisARestOfTheDay(currentTask)) {
-                return true;
+                return false;
             } else {
                 updateBlocking(currentTask, true);
-                return false;
+                return true;
             }
         } else if(currentTask.taskType === "time") {
             if(isTimeOver(currentTask)) {
                 updateBlocking(currentTask, true);
-                return false;
-            } else {
                 return true;
+            } else {
+                return false;
             }
         }
     }
@@ -150,5 +151,5 @@ chrome.webRequest.onBeforeRequest.addListener(function (details) {
         return {cancel: false};
     }
 }, {
-    urls: ["*://www.cplusplus.com/*"]
+    urls: ["<all_urls>"]
 }, ["blocking"]);

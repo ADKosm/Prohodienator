@@ -14,7 +14,7 @@ function addTaskToDB(obj) {
     localStorage.setItem(obj.blockedSite, JSON.stringify(currentTask));
 }
 
-window.onload = function () {
+window.addEventListener("load", function () {
 
     //$.alwaysUseJsonInStorage(true);
 
@@ -29,5 +29,17 @@ window.onload = function () {
         });
 
         addTaskToDB(taskData);
+
+        chrome.tabs.query({url: "http://"+taskData.blockedSite+"/*"}, function (tabs) {
+            $.each($.makeArray(tabs), function (i, val) {
+                chrome.tabs.reload(val.id);
+            });
+        });
+
+        chrome.tabs.query({currentWindow: true, active : true}, function (tabs) {
+            chrome.tabs.remove($.map($.makeArray(tabs), function (val, i) {
+                return val.id;
+            }));
+        });
     });
-};
+});
