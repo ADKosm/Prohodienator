@@ -21,12 +21,20 @@
     "contextMenus",
     "tabs",
     "webNavigation",
-    "alarms"
+    "alarms",
+    "webRequest",
+    "webRequestBlocking"
   ],
   "background": {
     "scripts": [
+      "js/jquery-3.1.0.min.js",
+      "js/url-tld.min.js",
       "js/background.js"
     ]
-  }
+  },
+  "web_accessible_resources": [
+    "html/addTask.html",
+    "html/blockPlug.html"
+  ]
 
 }
