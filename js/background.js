@@ -113,7 +113,6 @@ function handleRequest(url) {
     }
 
     if(currentTask.currentState.blocked) {
-        alert("YP");
         updateDate(currentTask);
         return true;
     } else {

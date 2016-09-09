@@ -14,12 +14,49 @@ function addTaskToDB(obj) {
     localStorage.setItem(obj.blockedSite, JSON.stringify(currentTask));
 }
 
+function setValuesToForm(blockedUrl) {
+    $("#blockedSite").val(blockedUrl);
+    if(window.location.search.substr(1) === 'edit') {
+        $("#headerLabel").html("Edit task: ");
+
+        var days = [
+            "daySunday",
+            "dayMonday",
+            "dayTuesday",
+            "dayWednesday",
+            "dayThursday",
+            "dayFriday",
+            "daySaturday"
+        ];
+
+        $.each(days, function (index, value) {
+            $("#" + value).prop("checked", false);
+        });
+
+        var currentTask = JSON.parse(localStorage.getItem(blockedUrl));
+        for(var key in currentTask) {
+            if(currentTask.hasOwnProperty(key) ) {
+                $("#" + key).val(currentTask[key]);
+                $("#" + key).prop('checked', true);
+            }
+        }
+
+        if(currentTask.taskType === 'time') {
+            $("#certainTime").prop("checked", true);
+        } else if (currentTask.taskType === 'rest') {
+            $("#restOfDay").prop("checked", true);
+        }
+    }
+}
+
 window.addEventListener("load", function () {
 
     //$.alwaysUseJsonInStorage(true);
 
     var blockedUrl = $.url('hostname', window.location.hash.substr(1));
-    $("#blockedSite").val(blockedUrl);
+
+    setValuesToForm(blockedUrl);
+
     $("#taskName").focus();
 
     $("#sub").click(function () {

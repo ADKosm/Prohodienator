@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of tasks</title>
+    <link href="../style/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../style/css/list.css" rel="stylesheet">
+    <script src="../js/jquery-3.1.0.min.js"></script>
+    <script src="../js/jquery.storageapi.min.js"></script>
+    <script src="../js/url-tld.min.js"></script>
+    <script src="../js/jsrender.min.js"></script>
+
+    <script id="listItemTemplate" type="text/x-jsrender">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h3 class="panel-title">Task for site: {{:site}}</h3>
+            </div>
+            <div class="panel-body">
+                <h4>Name: </h4> <p>{{:name}}</p>
+                <h4>Description: </h4> <p>{{:description}}</p>
+                <h4>Current state: </h4> <p>{{:blocked}}</p>
+                <button class="btn btn-primary editButton" data-site="{{:site}}" >Edit task</button>
+                <button class="btn btn-danger deleteButton" data-site="{{:site}}" >Delete task</button>
+            </div>
+        </div>
+    </script>
+
+    <script src="../js/list.js"></script>
+</head>
+<body>
+    <div class="container" id="tasksList">
+    </div>
+</body>
+</html>

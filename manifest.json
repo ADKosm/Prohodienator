@@ -5,6 +5,8 @@
   "description": "This extension helps spend time to useful things",
   "version": "1.0",
 
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
   "browser_action": {
     "default_icon": {
       "20": "img/icon20.png",
@@ -34,7 +36,8 @@
   },
   "web_accessible_resources": [
     "html/addTask.html",
-    "html/blockPlug.html"
+    "html/blockPlug.html",
+    "html/list.html"
   ]
 
 }
