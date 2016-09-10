@@ -8,7 +8,7 @@ Chrome extention for more efficient pastime in the Internet. Add your tasks for 
 
 #Installation
 
-1. Download this extention
+1. Download this extention ([Visit releases page](https://github.com/ADKosm/Prohodienator/releases))
 2. Open chromium-based browser and open tab with extentions
 3. Switch to developer mode
 4. Drag icon of this extention and drop it on extentions tab
