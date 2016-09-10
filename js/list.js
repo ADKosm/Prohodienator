@@ -15,6 +15,30 @@ function editTask(url) {
     chrome.tabs.create({"url": chrome.extension.getURL("html/addTask.html?edit#" + url) , "selected":true});
 }
 
+function generateDaysLabelsHtml(task) {
+    var daysTmpl = $.templates("#daysTemplate");
+
+    var daysArray = [
+        "dayMonday",
+        "dayTuesday",
+        "dayWednesday",
+        "dayThursday",
+        "dayFriday",
+        "daySaturday",
+        "daySunday"
+    ];
+
+    var dayHolder = [];
+
+    $.each(daysArray, function (index, value) {
+        if(task.hasOwnProperty(value)) {
+            dayHolder.push({day: value.substr(3)});
+        }
+    });
+
+    return daysTmpl.render(dayHolder);
+}
+
 window.addEventListener("load", function () {
     var data = [];
 
@@ -26,13 +50,15 @@ window.addEventListener("load", function () {
         taskToForm.name = ttask.taskName;
         taskToForm.description = ttask.taskDescription;
         taskToForm.blocked = ttask.currentState.blocked ? "Blocked" : "Open";
+        taskToForm.type = ttask.taskType === 'rest' ? "For the rest of the day" : "For " + ttask.taskTime + " hour(s)";
+        taskToForm.days = generateDaysLabelsHtml(ttask);
 
         data.push(taskToForm);
     }
 
-    var tmpl = $.templates("#listItemTemplate");
+    var listTmpl = $.templates("#listItemTemplate");
 
-    $("#tasksList").html( tmpl.render(data) );
+    $("#tasksList").html( listTmpl.render(data) );
     
     $(".deleteButton").click(function () {
         deleteTask($(this).data("site"));

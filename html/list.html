@@ -10,14 +10,20 @@
     <script src="../js/url-tld.min.js"></script>
     <script src="../js/jsrender.min.js"></script>
 
+    <script id="daysTemplate" type="text/x-jsrender">
+        <span class="label label-info dayLabel">{{:day}}</span>
+    </script>
+
     <script id="listItemTemplate" type="text/x-jsrender">
         <div class="panel panel-primary">
             <div class="panel-heading">
-                <h3 class="panel-title">Task for site: {{:site}}</h3>
+                <h3 class="panel-title">Task for site: <b>{{:site}}</b></h3>
             </div>
             <div class="panel-body">
                 <h4>Name: </h4> <p>{{:name}}</p>
                 <h4>Description: </h4> <p>{{:description}}</p>
+                <h4>Days: </h4> <p><h4>{{:days}}</h4></p>
+                <h4>Type: </h4> <p>{{:type}}</p>
                 <h4>Current state: </h4> <p>{{:blocked}}</p>
                 <button class="btn btn-primary editButton" data-site="{{:site}}" >Edit task</button>
                 <button class="btn btn-danger deleteButton" data-site="{{:site}}" >Delete task</button>

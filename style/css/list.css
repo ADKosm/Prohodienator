@@ -1,3 +1,7 @@
 body {
     padding-top: 20px;
 }
+
+.dayLabel {
+    margin-right: 5px;
+}
