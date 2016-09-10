@@ -67,7 +67,7 @@ window.addEventListener("load", function () {
 
         addTaskToDB(taskData);
 
-        chrome.tabs.query({url: "http://"+taskData.blockedSite+"/*"}, function (tabs) {
+        chrome.tabs.query({url: "*://"+taskData.blockedSite+"/*"}, function (tabs) {
             $.each($.makeArray(tabs), function (i, val) {
                 chrome.tabs.reload(val.id);
             });
