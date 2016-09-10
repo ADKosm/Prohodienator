@@ -58,7 +58,7 @@ window.addEventListener("load", function () {
 
     var listTmpl = $.templates("#listItemTemplate");
 
-    $("#tasksList").html( listTmpl.render(data) );
+    if(localStorage.length > 0) $("#tasksList").html( listTmpl.render(data) );
     
     $(".deleteButton").click(function () {
         deleteTask($(this).data("site"));

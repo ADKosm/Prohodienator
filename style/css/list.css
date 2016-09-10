@@ -5,3 +5,7 @@ body {
 .dayLabel {
     margin-right: 5px;
 }
+
+.noTasks {
+    text-align: center;
+}
