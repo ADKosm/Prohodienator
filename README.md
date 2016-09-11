@@ -1,7 +1,7 @@
 # Prohodienator
 <sub>from Latin pro + hodie: "of today"</sub>
 
-Chrome extention for more efficient pastime in the Internet. Add your tasks for sites that steal your time. After that, you immidiately get next benefits:
+Chrome extention for more efficient pastime on the Internet. Add your tasks for sites that steal your time. After that, you immidiately get next benefits:
 
 * Motivation to do your tasks
 * Stopping aimless wasting time in the Internet
@@ -17,6 +17,6 @@ Chrome extention for more efficient pastime in the Internet. Add your tasks for 
 
 #Usage
 
-Right click on any site and enter "Add task" in appeared menu. After that enter information about your task and push "Add button". Thats all!
+Right click on any site and enter "Add task" in appeared menu. After that enter information about your task and push "Add button". That's all!
 
 Clicking on extention icon, you can find "Manage" button, which bring you to configuring page.
